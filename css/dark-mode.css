@@ -1,0 +1,219 @@
+/**
+ * Dark Mode Styles
+ * Provides dark theme support with smooth transitions
+ */
+
+/* ===================================================================
+ * DARK MODE TOGGLE BUTTON
+ * =================================================================== */
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: var(--color-white, #ffffff);
+    border: 2px solid var(--color-gray-4, #e1e2e2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode-toggle:focus {
+    outline: 2px solid var(--color-1, #EA9010);
+    outline-offset: 2px;
+}
+
+.dark-mode-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-dark, #181818);
+}
+
+@media screen and (max-width: 900px) {
+    .dark-mode-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* ===================================================================
+ * DARK MODE VARIABLES
+ * =================================================================== */
+
+.dark-mode {
+    /* Override color variables for dark mode */
+    --color-text: #e1e2e2;
+    --color-text-dark: #f0f1f1;
+    --color-text-light: #a3a5a5;
+    --color-placeholder: #919292;
+    
+    --color-link: var(--color-1-lighter, #f5d89a);
+    --color-link-hover: var(--color-1-light, #f0c870);
+    
+    --color-btn: var(--color-gray-17, #363737);
+    --color-btn-text: var(--color-text);
+    --color-btn-hover: var(--color-gray-16, #484949);
+    
+    --color-preloader-bg: var(--color-gray-19, #121212);
+    
+    /* Background colors */
+    background-color: var(--color-gray-19, #121212);
+    color: var(--color-text);
+}
+
+.dark-mode body {
+    background-color: var(--color-gray-19, #121212);
+    color: var(--color-text);
+}
+
+/* ===================================================================
+ * DARK MODE COMPONENT OVERRIDES
+ * =================================================================== */
+
+.dark-mode .s-header {
+    background-color: var(--color-gray-18, #242525);
+    border-bottom-color: var(--color-gray-17, #363737);
+}
+
+.dark-mode .s-content {
+    background-color: var(--color-gray-19, #121212);
+}
+
+.dark-mode .s-footer {
+    background-color: var(--color-gray-18, #242525);
+    border-top-color: var(--color-gray-17, #363737);
+}
+
+.dark-mode .blog-card,
+.dark-mode .blog-post-categories-tags,
+.dark-mode .blog-comment-form-wrapper,
+.dark-mode .blog-filters {
+    background-color: var(--color-gray-18, #242525);
+    border-color: var(--color-gray-17, #363737);
+}
+
+.dark-mode .blog-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .blog-card__title a,
+.dark-mode .blog-post-title,
+.dark-mode .blog-comments-title,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: var(--color-text-dark, #f0f1f1);
+}
+
+.dark-mode .blog-card__text p,
+.dark-mode .blog-post-body p,
+.dark-mode .blog-comment__body {
+    color: var(--color-text, #e1e2e2);
+}
+
+.dark-mode .blog-search-form input[type="search"],
+.dark-mode .blog-filter-select,
+.dark-mode .blog-comment-form input,
+.dark-mode .blog-comment-form textarea {
+    background-color: var(--color-gray-17, #363737);
+    border-color: var(--color-gray-16, #484949);
+    color: var(--color-text);
+}
+
+.dark-mode .blog-search-form input[type="search"]:focus,
+.dark-mode .blog-filter-select:focus,
+.dark-mode .blog-comment-form input:focus,
+.dark-mode .blog-comment-form textarea:focus {
+    border-color: var(--color-1, #EA9010);
+}
+
+.dark-mode .blog-tag,
+.dark-mode .blog-post-category,
+.dark-mode .blog-post-tag,
+.dark-mode .blog-card__tag {
+    background-color: var(--color-gray-17, #363737);
+    border-color: var(--color-gray-16, #484949);
+    color: var(--color-text);
+}
+
+.dark-mode .blog-tag:hover,
+.dark-mode .blog-post-category:hover,
+.dark-mode .blog-post-tag:hover {
+    border-color: var(--color-1, #EA9010);
+    color: var(--color-1-lighter, #f5d89a);
+}
+
+.dark-mode .blog-comment {
+    background-color: var(--color-gray-17, #363737);
+    border-left-color: var(--color-1, #EA9010);
+}
+
+.dark-mode .blog-post-body pre {
+    background-color: var(--color-gray-18, #242525);
+    border: 1px solid var(--color-gray-17, #363737);
+}
+
+.dark-mode .blog-post-body code {
+    background-color: var(--color-gray-17, #363737);
+    color: var(--color-1-lighter, #f5d89a);
+}
+
+.dark-mode .dark-mode-toggle {
+    background-color: var(--color-gray-18, #242525);
+    border-color: var(--color-gray-16, #484949);
+}
+
+.dark-mode .dark-mode-toggle svg {
+    color: var(--color-text);
+}
+
+.dark-mode .s-cta {
+    background-color: var(--color-gray-18, #242525);
+}
+
+.dark-mode .btn--stroke {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.dark-mode .btn--stroke:hover {
+    background-color: var(--color-text);
+    color: var(--color-gray-19, #121212);
+}
+
+/* ===================================================================
+ * SMOOTH TRANSITIONS
+ * =================================================================== */
+
+.dark-mode-transitioning * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* ===================================================================
+ * ACCESSIBILITY - REDUCE MOTION
+ * =================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .dark-mode-toggle,
+    .dark-mode-transitioning * {
+        transition: none !important;
+    }
+}

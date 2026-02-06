@@ -1,0 +1,396 @@
+/**
+ * UI/UX Improvements
+ * Enhanced styling for better user experience, animations, and accessibility
+ */
+
+/* ===================================================================
+ * SMOOTH ANIMATIONS & TRANSITIONS
+ * =================================================================== */
+
+* {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===================================================================
+ * ENHANCED BUTTONS
+ * =================================================================== */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--color-1, #EA9010) 0%, var(--color-1-dark, #d17f0e) 100%);
+}
+
+.btn--primary:hover {
+    background: linear-gradient(135deg, var(--color-1-light, #f0c870) 0%, var(--color-1, #EA9010) 100%);
+}
+
+/* ===================================================================
+ * ENHANCED CARDS & HOVER EFFECTS
+ * =================================================================== */
+
+.blog-card,
+.list-items__item,
+.grid-list-items__item {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover,
+.list-items__item:hover,
+.grid-list-items__item:hover {
+    transform: translateY(-4px);
+}
+
+/* ===================================================================
+ * IMPROVED TYPOGRAPHY
+ * =================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.7;
+}
+
+.lead {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-light, #6d6e6e);
+}
+
+/* ===================================================================
+ * ENHANCED FORM ELEMENTS
+ * =================================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-1, #EA9010);
+    box-shadow: 0 0 0 3px rgba(234, 144, 16, 0.1);
+}
+
+/* ===================================================================
+ * IMPROVED SPACING SYSTEM
+ * =================================================================== */
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.grid-list-items {
+    gap: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .grid-list-items {
+        gap: 1.5rem;
+    }
+}
+
+/* ===================================================================
+ * ACCESSIBILITY IMPROVEMENTS
+ * =================================================================== */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--color-1, #EA9010);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-1, #EA9010);
+    color: var(--color-white, #ffffff);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-to-main:focus {
+    top: 0;
+}
+
+/* Screen reader only text */
+.u-screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ===================================================================
+ * LOADING STATES
+ * =================================================================== */
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--color-1, #EA9010);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===================================================================
+ * IMPROVED IMAGES
+ * =================================================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* ===================================================================
+ * ENHANCED LINKS
+ * =================================================================== */
+
+a {
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-1, #EA9010);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ===================================================================
+ * IMPROVED NAVIGATION
+ * =================================================================== */
+
+.s-header__menu-links a {
+    position: relative;
+}
+
+.s-header__menu-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-1, #EA9010);
+    transition: width 0.3s ease;
+}
+
+.s-header__menu-links a:hover::after,
+.s-header__menu-links a.current::after {
+    width: 100%;
+}
+
+/* ===================================================================
+ * GLASSMORPHISM EFFECTS (Optional)
+ * =================================================================== */
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================================================
+ * IMPROVED SCROLLBAR (Webkit browsers)
+ * =================================================================== */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray-2, #f0f1f1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gray-10, #b5b7b7);
+    border-radius: 6px;
+    border: 2px solid var(--color-gray-2, #f0f1f1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-12, #919292);
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: var(--color-gray-18, #242525);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: var(--color-gray-15, #5b5c5c);
+    border-color: var(--color-gray-18, #242525);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-13, #7f8080);
+}
+
+/* ===================================================================
+ * PRINT STYLES
+ * =================================================================== */
+
+@media print {
+    .s-header,
+    .s-footer,
+    .dark-mode-toggle,
+    .blog-comment-form-wrapper,
+    .btn {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+/* ===================================================================
+ * RESPONSIVE IMPROVEMENTS
+ * =================================================================== */
+
+@media screen and (max-width: 600px) {
+    .text-display-title {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===================================================================
+ * PERFORMANCE OPTIMIZATIONS
+ * =================================================================== */
+
+/* GPU acceleration for animations */
+.blog-card,
+.btn,
+.dark-mode-toggle {
+    will-change: transform;
+}
+
+/* Reduce repaints */
+.s-header,
+.s-footer {
+    contain: layout style paint;
+}

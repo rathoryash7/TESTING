@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Working with Veratas as Intern",
+    "slug": "working-with-veratas-as-intern",
+    "excerpt": "Since July 1, 2024, I've been interning at Veritas, where I work on live products and gain hands-on experience with various cutting-edge technologies.",
+    "content": "Since July 1, 2024, I've been interning at Veritas, where I work on live products and gain hands-on experience with various cutting-edge technologies, including Azure Databricks, Azure Data Lake, Power BI, and ETL processes. This opportunity is enhancing my skills and expanding my technical expertise.\n\n## Key Technologies\n\n- Azure Databricks\n- Azure Data Lake\n- Power BI\n- ETL Processes\n\nThis experience has been invaluable in understanding real-world data engineering challenges and solutions.",
+    "author": "Yash Rathor",
+    "date": "2024-07-01",
+    "readingTime": 3,
+    "coverImage": "images/thumbs/blog/veratas.jpg",
+    "categories": ["Experience", "Career"],
+    "tags": ["Azure", "Power BI", "ETL", "Data Engineering"],
+    "published": true
+  },
+  {
+    "id": 2,
+    "title": "AI Should Augment Human Intelligence, Not Replace It",
+    "slug": "ai-should-augment-human-intelligence",
+    "excerpt": "In an economy where data is transforming how companies create value and compete, experts predict that large-scale AI will add $15.7 trillion to the global economy by 2030.",
+    "content": "In an economy where data is transforming how companies create value and compete, experts predict that large-scale AI will add $15.7 trillion to the global economy by 2030. As AI continues to change the landscape of work, it's expected to replace human employees with intelligent machines, significantly reshaping the workforce.\n\n## The Future of Work\n\nIntelligent systems are already displacing humans in manufacturing, service delivery, recruitment, and the financial industry, leading to concerns about job displacement and the future role of human workers.\n\nHowever, I believe that AI should augment human intelligence rather than replace it. The key is finding the right balance between automation and human creativity.",
+    "author": "Yash Rathor",
+    "date": "2024-08-15",
+    "readingTime": 5,
+    "coverImage": "images/thumbs/blog/ai.jpg",
+    "categories": ["Productivity", "Technology"],
+    "tags": ["AI", "Future of Work", "Technology"],
+    "published": true
+  },
+  {
+    "id": 3,
+    "title": "Disease Prediction System & Doctor Recommendation (ML)",
+    "slug": "disease-prediction-system",
+    "excerpt": "The Diseases Prediction and Doctors Recommender System, developed with Flutter and Python, uses Kaggle datasets for early disease detection.",
+    "content": "The Diseases Prediction and Doctors Recommender System, developed with Flutter and Python, uses Kaggle datasets for early disease detection and proactive healthcare. It offers personalized doctor recommendations based on predicted diseases and user location, improving healthcare accessibility and outcomes, especially in rural areas.\n\n## Key Features\n\n- Early disease detection using machine learning\n- Personalized doctor recommendations\n- Location-based matching\n- Rural healthcare accessibility\n\n```python\n# Example: Disease prediction model\nfrom sklearn.ensemble import RandomForestClassifier\n\nmodel = RandomForestClassifier(n_estimators=100)\nmodel.fit(X_train, y_train)\npredictions = model.predict(X_test)\n```\n\nThis project also helps to assist doctors which are present in villages, making healthcare more accessible to underserved communities.",
+    "author": "Yash Rathor",
+    "date": "2024-11-01",
+    "readingTime": 7,
+    "coverImage": "images/thumbs/blog/ml-project.jpg",
+    "categories": ["Projects", "Machine Learning"],
+    "tags": ["Machine Learning", "Healthcare", "Python", "Flutter"],
+    "published": true
+  },
+  {
+    "id": 4,
+    "title": "Impact of React in MERN Stack Development",
+    "slug": "impact-of-react-in-mern-stack",
+    "excerpt": "I covered React basics, setting up with Node.js, and creating a React app. The MERN stack empowers scalable web applications.",
+    "content": "I covered React basics, setting up with Node.js, and creating a React app. The MERN stack—MongoDB, Express.js, React.js, Node.js—empowers scalable web apps. MVC architecture guides Node.js setup, MongoDB connection, and CRUD operations.\n\n## React's Impact\n\nReact's impact includes:\n\n- Efficient UI rendering\n- State management\n- SPA (Single Page Application) development\n- Component reusability\n\n```javascript\n// Example: React component\nimport React, { useState } from 'react';\n\nfunction App() {\n  const [count, setCount] = useState(0);\n  \n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>Increment</button>\n    </div>\n  );\n}\n```\n\nAxios integrates APIs with React for data fetching, addressing CORS issues in Node.js applications.",
+    "author": "Yash Rathor",
+    "date": "2024-09-20",
+    "readingTime": 6,
+    "coverImage": "images/thumbs/blog/react.jpg",
+    "categories": ["Productivity", "Web Development"],
+    "tags": ["React", "MERN Stack", "JavaScript", "Web Development"],
+    "published": true
+  }
+]
